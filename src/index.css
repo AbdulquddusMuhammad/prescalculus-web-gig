@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #11101a; }
+::-webkit-scrollbar-thumb { background: #4a3f8a; border-radius: 4px; }
+
+/* ── Base ── */
+body {
+  font-family: 'Sora', sans-serif;
+  background: #0a0910;
+  color: #f0ecff;
+  min-height: 100vh;
+}
+
+/* ── Glass morphism ── */
+.glass {
+  background: rgba(15, 12, 28, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-card {
+  background: rgba(18, 14, 32, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(150, 120, 255, 0.15);
+}
+
+/* ── Progress bar fill ── */
+.progress-fill {
+  height: 5px;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* ── Fade up animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s ease both; }
+
+/* ── Page background ── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1800&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+.page-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(8,5,20,0.9) 0%, rgba(12,8,28,0.85) 50%, rgba(6,4,16,0.95) 100%);
+}
+
+/* ── Hero bg ── */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center top;
+  border-radius: 18px;
+}
+.hero-bg-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, rgba(8,5,20,0.93) 0%, rgba(15,10,35,0.85) 55%, rgba(8,5,20,0.75) 100%);
+}
+
+/* ── Course player bg ── */
+.player-page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=75&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+.player-page-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(6,3,18,0.94) 0%, rgba(10,6,24,0.9) 100%);
+}
+
+/* ── Quiz options ── */
+.quiz-opt {
+  background: rgba(15, 12, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  padding: 11px 15px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+  text-align: left;
+  width: 100%;
+  color: #e8e4f0;
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 8px;
+  display: block;
+}
+.quiz-opt:hover { border-color: rgba(124,92,191,0.5); background: rgba(124,92,191,0.12); }
+.quiz-opt.correct { border-color: rgba(74,222,128,0.6); background: rgba(74,222,128,0.1); color: #4ade80; }
+.quiz-opt.wrong   { border-color: rgba(248,113,113,0.6); background: rgba(248,113,113,0.1); color: #f87171; }
